@@ -2,6 +2,40 @@
   color: white;
 }
 
+.container-xl {
+  display: flex;
+  flex-direction: column; 
+  gap: 50px;
+}
+
+.cont-center{
+  justify-content:center;
+}
+
+.btn-auth {
+  margin-top: 20px;
+}
+
 a{
   color: white;
+}
+
+.auth,.reg {
+  /* flex: 1;
+  margin: auto 0;
+  justify-self: center; */
+}
+
+.form-select{
+  margin-top: 40px;
+}
+
+.rents-container {
+  display: flex;
+  gap: 50px
+}
+
+.like{
+  width: 25px;
+  height: 25px;
 }
