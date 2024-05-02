@@ -26,7 +26,13 @@ a{
   justify-self: center; */
 }
 
-.form-select{
+.btn-like{
+  border: none; 
+  outline: none;
+  background-color: #fff;
+}
+
+.form-select, .favorite{
   margin-top: 40px;
 }
 
@@ -35,7 +41,16 @@ a{
   gap: 50px
 }
 
-.like{
+ .like{
   width: 25px;
   height: 25px;
+  /* background-image: url(/public/images/like.png); */
+}
+
+.like-fill{
+  /* background-image: url(/public/images/like-fill.png); */
+}
+
+.card{
+  max-width: 350px;
 }

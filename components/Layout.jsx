@@ -12,6 +12,7 @@ function Layout({
         <script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js' />
         <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js' />
         <script defer src='/scripts/auth.js' />
+        <script defer src='/scripts/script.js' />
         <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' />
         <link rel='stylesheet' href='/styles/style.css' />
       </head>
