@@ -2,16 +2,16 @@ const React = require('react');
 const Layout = require('./Layout');
 const RentCard = require('./RentCard');
 
-function MainPage({ title, user, rents }) {
+function MainPage({
+  title, user, rents, categories,
+}) {
   return (
     <Layout title={title} user={user}>
       <select className='form-select mx-auto' aria-label='Default select example'>
-        <option selected>Все виды жилья</option>
-        <option value='комната'>Команты</option>
-        <option value='квартира'>Квартиры</option>
-        <option value='дом'>Дома</option>
+        <option defaultValue>Все виды жилья</option>
+        {categories.map((el) => (<option value={el.name} key={el.id}>{el.name}</option>))}
       </select>
-      <div className='rents-container'>
+      <div className='rents-container flex-wrap justify-content-around'>
         {rents.map((rent) => (
           <RentCard rent={rent} key={rent.id} user={user} />
         ))}
