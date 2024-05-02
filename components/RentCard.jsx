@@ -16,7 +16,7 @@ function RentCard({ rent, user }) {
           ₽
         </p>
         <div className='d-flex justify-content-between align-items-center'>
-          <a href='#' className='btn btn-primary'>Подробнее</a>
+          <a href='#' className='btn btn-primary'>Подробне</a>
           <a href='#'><img src='/images/like.png' alt='like' className='like' /></a>
         </div>
 
