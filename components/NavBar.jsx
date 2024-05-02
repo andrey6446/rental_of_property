@@ -13,18 +13,31 @@ function NavBar({ user }) {
             <li className='nav-item'>
               <a className='nav-link active' aria-current='page' href='/'>Категории</a>
             </li>
+            {user && (
             <li className='nav-item'>
               <a className='nav-link' href='/favorites'>Избранное</a>
             </li>
+            )}
+            {!user && (
             <li className='nav-item'>
-              <a className='nav-link' href='/registration'>Регистрация</a>
+              <a className='nav-link' href='/auth/registration'>Регистрация</a>
             </li>
+            )}
+            {user ? (
+              <li className='nav-item'>
+                <a className='nav-link' href='/auth/logout'>Выход</a>
+              </li>
+            ) : (
+              <li className='nav-item'>
+                <a className='nav-link' href='/auth/authorization'>Вход</a>
+              </li>
+            )}
+
+            {user && (
             <li className='nav-item'>
-              <a className='nav-link' href='/authorization'>Вход</a>
+              <a className='nav-link' href='/profile'>{user.userName}</a>
             </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='/profile'>Профиль</a>
-            </li>
+            )}
           </ul>
         </div>
       </div>
