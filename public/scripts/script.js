@@ -3,7 +3,7 @@ const addForm = document.querySelector('.addCategory');
 const updateForm = document.querySelector('.updateCategory');
 const select = document.querySelector('.form-select');
 const updateBtn = document.querySelector('.btn-update');
-const deleteBtn = document.querySelector('.btn-delete');
+const mapDiv = document.getElementById('map');
 
 // добавление жилья в избранное
 if (rentsContainer) {
@@ -152,3 +152,35 @@ if (addForm) {
     }
   });
 }
+let rentid;
+if (mapDiv) {
+  rentid = mapDiv.dataset.rentid;
+}
+
+async function initMap() {
+  const res = await fetch(`/map/${rentid}`);
+  const data = await res.json();
+
+  const rent = new ymaps.Placemark(
+    data.rent.location.split(',').map((e) => parseFloat(e)),
+    {
+      hintContent: data.rent.title,
+      balloonContentBody: data.rent.price,
+      balloonContentHeader: data.rent.title,
+    },
+    {
+      iconLayout: 'default#image',
+      iconImageHref: '/images/location.png',
+      iconImageSize: [30, 30],
+    },
+  );
+
+  const map = new ymaps.Map('map', {
+    center: data.rent.location.split(',').map((e) => parseFloat(e)),
+    zoom: 15,
+    controls: ['zoomControl', 'searchControl', 'typeSelector', 'fullscreenControl'],
+  });
+
+  map.geoObjects.add(rent);
+}
+ymaps.ready(initMap);

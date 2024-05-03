@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/rent/:rentId', async (req, res) => {
+router.get('/rent/:rentId/description', async (req, res) => {
   try {
     const { user } = res.locals;
     const { rentId } = req.params;
@@ -38,7 +38,7 @@ router.get('/rent/:rentId', async (req, res) => {
   }
 });
 
-router.get('/update/:rentId', async (req, res) => {
+router.get('/update/:rentId/update', async (req, res) => {
   try {
     const { user } = res.locals;
     const { rentId } = req.params;
