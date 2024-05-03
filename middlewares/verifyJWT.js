@@ -7,9 +7,12 @@ function verifyRefreshToken(req, res, next) {
     const { refresh } = req.cookies;
     const { user } = jwt.verify(refresh, 'R');
     const { accessToken, refreshToken } = generateTokens({
-      user: { id: user.id, email: user.email, userName: user.userName },
+      user: {
+        id: user.id, userName: user.userName, email: user.email, image: user.image, isAdmin: user.isAdmin,
+      },
     });
     res.locals.user = user;
+    console.log(user);
     res
       .cookie(jwtConfig.refresh.type, refreshToken, {
         maxAge: jwtConfig.refresh.expiresIn,
@@ -30,7 +33,6 @@ function verifyAccessToken(req, res, next) {
   try {
     const { access } = req.cookies;
     const { user } = jwt.verify(access, 'A');
-
     res.locals.user = user;
     next();
   } catch (error) {

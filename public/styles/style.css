@@ -20,12 +20,6 @@ a{
   color: white;
 }
 
-.auth,.reg {
-  /* flex: 1;
-  margin: auto 0;
-  justify-self: center; */
-}
-
 .btn-like{
   border: none; 
   outline: none;
@@ -44,13 +38,32 @@ a{
  .like{
   width: 25px;
   height: 25px;
-  /* background-image: url(/public/images/like.png); */
+
 }
 
-.like-fill{
-  /* background-image: url(/public/images/like-fill.png); */
+.navbar-collapse{
+  text-align: end;
 }
 
 .card{
   max-width: 350px;
+  border-radius: 1.25rem;
+}
+
+.email {
+  color: black;
+}
+
+.profile .card{
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.profile-img{
+  object-fit: cover;
+}
+
+.card-img-top{
+  border-top-left-radius: calc(1.25rem - 1px);
+  border-top-right-radius: calc(1.25rem - 1px);
 }

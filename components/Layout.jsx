@@ -1,5 +1,6 @@
 const React = require('react');
 const NavBar = require('./NavBar');
+const Footer = require('./Footer');
 
 function Layout({
   title, children, user, center,
@@ -18,7 +19,8 @@ function Layout({
       </head>
       <body>
         <NavBar user={user} />
-        <div className={center ? 'container-xl vh-100 cont-center' : 'container-xl vh-100'}>{children}</div>
+        <div className={center ? 'container-xl min-vh-100 cont-center' : 'container-xl min-vh-100'}>{children}</div>
+        <Footer />
       </body>
     </html>
   );
