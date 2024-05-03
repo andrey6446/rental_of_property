@@ -6,7 +6,7 @@ function RentPage({ title, user, rent }) {
     <Layout title={title} user={user}>
       <div className='container px-4 px-lg-5 my-5'>
         <div className='row gx-4 gx-lg-5 align-items-center'>
-          <div className='col-md-6'><img className='card-img-top mb-5 mb-md-0' src={rent.images} alt='rent' /></div>
+          <div className='col-md-6'><img className='card-img-top car-img-bot mb-5 mb-md-0' src={rent.images} alt='rent' /></div>
           <div className='col-md-6'>
             <div className='mb-1'>{rent.Category.name}</div>
             <h1 className='display-5 fw-bolder'>{rent.title}</h1>
@@ -20,7 +20,9 @@ function RentPage({ title, user, rent }) {
             <p className='lead'>{rent.description}</p>
             <a href='/' className='btn btn-primary'>Назад</a>
           </div>
+          <div id='map' data-rentid={rent.id} style={{ width: '800px', height: '400px' }} />
         </div>
+
       </div>
     </Layout>
   );

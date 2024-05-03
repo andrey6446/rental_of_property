@@ -5,7 +5,7 @@ function RentUpdatePage({ title, user, rent }) {
   return (
     <Layout title={title} user={user}>
       <form
-        action={`/api/update/${rent.id}`}
+        action={`/api/update/${rent.id}/update`}
         method='put'
         className='needs-validation column mt-3 updateCategory'
         noValidate

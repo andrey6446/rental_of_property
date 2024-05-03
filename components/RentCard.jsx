@@ -16,10 +16,10 @@ function RentCard({ rent, user }) {
           ₽
         </p>
         <div className='d-flex justify-content-between align-items-center'>
-          <a href={`/rent/${rent.id}`} className='btn btn-primary btn-desc'>Подробнее</a>
+          <a href={`/rent/${rent.id}/description`} className='btn btn-primary btn-desc'>Подробнее</a>
           {user && user.isAdmin && (
           <>
-            <a href={`/update/${rent.id}`} className='btn btn-primary btn-desc'>Изменить</a>
+            <a href={`/update/${rent.id}/update`} className='btn btn-primary btn-desc'>Изменить</a>
             <button className='btn btn-primary btn-delete'>Удалить</button>
           </>
           )}

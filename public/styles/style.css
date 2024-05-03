@@ -60,10 +60,34 @@ a{
 }
 
 .profile-img{
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .card-img-top{
   border-top-left-radius: calc(1.25rem - 1px);
   border-top-right-radius: calc(1.25rem - 1px);
+
+}
+
+.car-img-bot{
+  border-bottom-right-radius: calc(1.25rem - 1px);
+  border-bottom-left-radius: calc(1.25rem - 1px);
+}
+
+.error{
+  text-align: center;
+}
+
+.error-message{
+  text-align: center;
+}
+
+.error img {
+  margin: 40px auto;
+  display: block;
+  align-items: center;
+}
+#map {
+  /* margin: 0 auto; */
+  margin-top: 40px;
 }

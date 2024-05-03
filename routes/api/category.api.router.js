@@ -24,7 +24,7 @@ router.delete('/delete/:rentId', async (req, res) => {
 });
 
 // Редактирование жилья для админа
-router.put('/update/:rentId', upload.single('images'), async (req, res) => {
+router.put('/update/:rentId/update', upload.single('images'), async (req, res) => {
   try {
     const { rentId } = req.params;
     const {
