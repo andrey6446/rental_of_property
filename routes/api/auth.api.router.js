@@ -20,11 +20,12 @@ router.post('/registration', async (req, res) => {
       userName,
       email,
       password: hashPassword,
+      image: '/images/profile-default.png',
       isAdmin: false,
     });
     const user = await User.findOne({
       where: { id: userInDb.id },
-      attributes: ['id', 'userName', 'email'],
+      attributes: ['id', 'userName', 'email', 'image', 'isAdmin'],
     });
     if (user) {
       const { accessToken, refreshToken } = generateToken({ user });
@@ -50,26 +51,28 @@ router.post('/authorization', async (req, res) => {
   try {
     const { email, password } = req.body;
     const userInDb = await User.findOne({ where: { email } });
-    const isDone = await bcrypt.compare(password, userInDb.password);
-    if (isDone) {
-      const user = await User.findOne({
-        where: { id: userInDb.id },
-        attributes: ['id', 'userName', 'email'],
-      });
-      if (user) {
-        const { accessToken, refreshToken } = generateToken({ user });
-        res.locals.user = user;
-        res
-          .cookie('access', accessToken, {
-            maxAge: jwtConfig.access.expiresIn,
-            httpOnly: true,
-          })
-          .cookie('refresh', refreshToken, {
-            maxAge: jwtConfig.refresh.expiresIn,
-            httpOnly: true,
-          })
-          .status(201)
-          .json({ message: 'success' });
+    if (userInDb) {
+      const isDone = await bcrypt.compare(password, userInDb.password);
+      if (isDone) {
+        const user = await User.findOne({
+          where: { id: userInDb.id },
+          attributes: ['id', 'userName', 'email', 'image', 'isAdmin'],
+        });
+        if (user) {
+          const { accessToken, refreshToken } = generateToken({ user });
+          res.locals.user = user;
+          res
+            .cookie('access', accessToken, {
+              maxAge: jwtConfig.access.expiresIn,
+              httpOnly: true,
+            })
+            .cookie('refresh', refreshToken, {
+              maxAge: jwtConfig.refresh.expiresIn,
+              httpOnly: true,
+            })
+            .status(201)
+            .json({ message: 'success' });
+        }
       }
     } else {
       const html = '<div class="alert alert-warning alert-dismissible fade show" role="alert">Не верный логин или пароль<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
