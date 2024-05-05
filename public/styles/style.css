@@ -1,0 +1,93 @@
+.nav-link {
+  color: white;
+}
+
+.container-xl {
+  display: flex;
+  flex-direction: column; 
+  gap: 50px;
+}
+
+.cont-center{
+  justify-content:center;
+}
+
+.btn-auth {
+  margin-top: 20px;
+}
+
+a{
+  color: white;
+}
+
+.btn-like{
+  border: none; 
+  outline: none;
+  background-color: #fff;
+}
+
+.form-select, .favorite{
+  margin-top: 40px;
+}
+
+.rents-container {
+  display: flex;
+  gap: 50px
+}
+
+ .like{
+  width: 25px;
+  height: 25px;
+
+}
+
+.navbar-collapse{
+  text-align: end;
+}
+
+.card{
+  max-width: 350px;
+  border-radius: 1.25rem;
+}
+
+.email {
+  color: black;
+}
+
+.profile .card{
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.profile-img{
+  object-fit: contain;
+}
+
+.card-img-top{
+  border-top-left-radius: calc(1.25rem - 1px);
+  border-top-right-radius: calc(1.25rem - 1px);
+
+}
+
+.car-img-bot{
+  border-bottom-right-radius: calc(1.25rem - 1px);
+  border-bottom-left-radius: calc(1.25rem - 1px);
+}
+
+.error{
+  text-align: center;
+}
+
+.error-message{
+  text-align: center;
+}
+
+.error img {
+  margin: 40px auto;
+  display: block;
+  align-items: center;
+}
+#map {
+  /* margin: 0 auto; */
+  margin-top: 40px;
+}
